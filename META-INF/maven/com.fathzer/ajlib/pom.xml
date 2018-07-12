@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.fathzer</groupId>
+		<artifactId>parent-pom</artifactId>
+		<version>1.0.2</version>
+	</parent>
+	<artifactId>ajlib</artifactId>
+	<version>0.3.10</version>
+
+  	<packaging>jar</packaging>
+
+	<name>A-JLib</name>
+	<description>AJlib is a simple java library with Swing widgets, utilities and other stuff</description>
+	<url>http://ajlib.soft.fathzer.com</url>
+
+	<scm>
+		<url>http://svn.code.sf.net/p/ajlib/code/trunk</url>
+		<connection>http://svn.code.sf.net/p/ajlib/code/trunk</connection>
+	</scm>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.3</version>
+				<configuration>
+					<excludePackageNames>com.fathzer.soft.ajlib.swing.demo</excludePackageNames>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>com.fathzer.soft.ajlib.swing.demo.AJLibDemo</mainClass>
+						</manifest>
+					</archive>
+					<excludes>
+						<exclude>com/fathzer/soft/ajlib/junit/*.*</exclude>
+						<exclude>com/fathzer/soft/ajlib/junit</exclude>
+						<exclude>**/package.html</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<configuration>
+							<target>
+								<zip destfile="${basedir}/A-JLib-v${project.version}.zip">
+									<zipfileset dir="." includes="license.html" />
+									<zipfileset dir="${project.build.directory}"
+										includes="*.jar" />
+								</zip>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.fathzer</groupId>
+			<artifactId>jlocal</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+</project>

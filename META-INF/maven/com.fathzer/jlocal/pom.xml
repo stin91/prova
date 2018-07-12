@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.fathzer</groupId>
+		<artifactId>parent-pom</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	
+	<artifactId>jlocal</artifactId>
+	<version>1.0.0</version>
+	
+	<name>jlocal</name>
+	<description>A translator friendly alternative to java.text.MessageFormat.</description>
+	<url>http://sourceforge.net/projects/jlocaltools/</url>
+
+	<scm>
+		<url>http://svn.code.sf.net/p/jlocaltools/code/jlocaltools-code/trunk</url>
+		<connection>http://svn.code.sf.net/p/jlocaltools/code/jlocaltools-code/trunk</connection>
+	</scm>
+
+</project>

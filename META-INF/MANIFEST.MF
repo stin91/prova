@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Build-Jdk: 1.7.0_45
+Built-By: Jean-Marc_2
+Created-By: Apache Maven 3.3.9
+Main-Class: com.fathzer.soft.javaluator.demo.DemoApplet
+Archiver-Version: Plexus Archiver
+
